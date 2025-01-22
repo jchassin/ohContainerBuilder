@@ -22,22 +22,17 @@ cd ..
 docker buildx build --load -t my-openhome:1.0
 docker run -it -v ./work:/work --rm my-openhome:1.0 bash
 
-```markdown
-
 ## Build oh
-```bash
+---
 ### Inside the container bash
 export openhome_folder=/work
 export target=Linux-x64
 
-```markdown
-
+---
 ### build ohNet
-```bash
 cd ohNet ; make GenAll uset4=yes ; make ; cd ..
-```markdown
-```bash
+
+---
 ### build openssl
 cd openssl
 python ./create_lib.py --platform ${target} --configure --clean --build
-```markdown
