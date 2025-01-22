@@ -22,6 +22,8 @@ cd ..
 docker buildx build --load -t my-openhome:1.0
 docker run -it -v ./work:/work --rm my-openhome:1.0 bash
 
+---
+```bash
 ## Build oh
 ### Inside the container bash
 export openhome_folder=/work
