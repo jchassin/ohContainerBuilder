@@ -22,7 +22,7 @@ cd ..
 
 docker buildx build --load -t my-openhome:1.0
 docker run -it -v ./work:/work --rm my-openhome:1.0 bash
-'''
+```
 
 ## Build oh
 ---
@@ -30,15 +30,13 @@ docker run -it -v ./work:/work --rm my-openhome:1.0 bash
 ### Inside the container bash
 export openhome_folder=/work
 export target=Linux-x64
-'''
----
-```bash
+```
 ### build ohNet
-cd ohNet ; make GenAll uset4=yes ; make ; cd ..
-'''
 ```bash
----
+cd ohNet ; make GenAll uset4=yes ; make ; cd ..
+```
 ### build openssl
+```bash
 cd openssl
 python ./create_lib.py --platform ${target} --configure --clean --build
-'''
+```
