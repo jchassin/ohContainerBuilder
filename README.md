@@ -7,7 +7,7 @@ Necessary commands to build openhome in a container
 Tested in wsl2 with docker desktop installed
 Create a folder and cd in it
 
-
+```bash
 mkdir work
 cd work
 git clone https://github.com/openhome/openssl
