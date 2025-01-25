@@ -1,0 +1,21 @@
+--- wscript	2024-12-14 22:18:59.647830513 +0100
++++ ../../../ohContainerBuilder/work/ohPipeline/wscript	2025-01-25 18:03:37.931463031 +0100
+@@ -14,7 +14,8 @@
+ sys.path[0:0] = [os.path.join('dependencies', 'AnyPlatform', 'ohWafHelpers')]
+ 
+ from filetasks import gather_files, build_tree, copy_task, find_dir_or_fail, create_copy_task
+-from utilfuncs import invoke_test, guess_dest_platform, configure_toolchain, guess_ohnet_location, guess_location, guess_ssl_location, guess_raat_location, guess_libplatform_location, guess_libosa_location, is_core_platform
++#from utilfuncs import invoke_test, guess_dest_platform, configure_toolchain, guess_ohnet_location, guess_location, guess_ssl_location, guess_raat_location,
++from utilfuncs import invoke_test, guess_dest_platform, configure_toolchain, guess_ohnet_location, guess_location, guess_ssl_location, guess_libplatform_location, guess_libosa_location, is_core_platform
+ 
+ def options(opt):
+     opt.load('msvs')
+@@ -60,7 +61,7 @@
+     configure_toolchain(conf)
+     guess_ohnet_location(conf)
+     guess_ssl_location(conf)
+-    guess_raat_location(conf)
++    #guess_raat_location(conf)
+ 
+     conf.env.dest_platform = conf.options.dest_platform
+     conf.env.testharness_dir = os.path.abspath(conf.options.testharness_dir)
