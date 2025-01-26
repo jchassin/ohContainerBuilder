@@ -48,6 +48,14 @@ python bundle_binaries.py --system Linux --architecture x64 --configuration Rele
 cd openssl
 python ./create_lib.py --platform ${target} --configure --clean --build
 ```
+# build ohNetGenerated
+```bash
+cd ../ohNetGenerated ; mkdir -p dependencies/${target}
+cp ../ohNet/Build/Bundles/ohNet-${target}-Release.tar.gz ./dependencies/${target}/.
+tar -xzf dependencies/${target}/ohNet-${target}-Release.tar.gz -C dependencies/${target}/.
+make GenAll uset4=yes
+make
+```
 
 # build ohMediaPlayer
 ```bash
@@ -60,16 +68,7 @@ ln -s "../../../ohWafHelpers" "dependencies/AnyPlatform/."
 ./waf bundle
 ```
 
-# build ohNetGenerated 
-```bash
-cd ../ohNetGenerated ; mkdir -p dependencies/${target}
-cp ../ohNet/Build/Bundles/ohNet-${target}-Release.tar.gz ./dependencies/${target}/.
-tar -xzf dependencies/${target}/ohNet-${target}-Release.tar.gz -C dependencies/${target}/.
-make GenAll uset4=yes
-make
-```
-
-# build ohMediaPlayer
+# build ohPlayer => does not compile ohPlayer code to be updated
 ```bash
 cd ohPlayer
 mkdir -p "dependencies/AnyPlatform"
